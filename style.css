@@ -1,7 +1,27 @@
-/* Indicadores sobre as imagens */
+/* Carrossel básico */
+.carousel {
+   position: relative;
+   width: 100%;
+   overflow: hidden;
+}
+
+.carousel_inner {
+   display: flex;
+   width: 500%; /* Para 5 imagens */
+}
+
+.carousel_item {
+   width: 100%;
+   display: none;
+}
+
+.carousel_img {
+   width: 100%;
+}
+
 .carousel_indicator {
    position: absolute;
-   bottom: 10px;  /* Ajuste conforme necessário */
+   bottom: 1rem;
    left: 50%;
    transform: translateX(-50%);
    display: flex;
@@ -14,12 +34,54 @@
    height: 10px;
    background-color: rgba(255, 255, 255, 0.5);
    border-radius: 50%;
-   border: none;
    cursor: pointer;
    transition: background-color 0.3s ease;
 }
 
-.carousel_dot__active {
+.carousel_dot:hover {
+   background-color: rgba(135, 206, 250, 0.75);
+}
+
+input[type="radio"] {
+   display: none;
+}
+
+#slide1:checked ~ .carousel_inner .carousel_item:nth-child(1),
+#slide2:checked ~ .carousel_inner .carousel_item:nth-child(2),
+#slide3:checked ~ .carousel_inner .carousel_item:nth-child(3),
+#slide4:checked ~ .carousel_inner .carousel_item:nth-child(4),
+#slide5:checked ~ .carousel_inner .carousel_item:nth-child(5) {
+   display: block;
+}
+
+#slide1:checked ~ .carousel_indicator .carousel_dot:nth-child(1),
+#slide2:checked ~ .carousel_indicator .carousel_dot:nth-child(2),
+#slide3:checked ~ .carousel_indicator .carousel_dot:nth-child(3),
+#slide4:checked ~ .carousel_indicator .carousel_dot:nth-child(4),
+#slide5:checked ~ .carousel_indicator .carousel_dot:nth-child(5) {
    background-color: lightskyblue;
-   pointer-events: none;
+}
+
+.carousel_button {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   background-color: transparent;
+   color: rgba(255, 255, 255, 0.5);
+   font-size: 2rem;
+   border: none;
+   cursor: pointer;
+   z-index: 2;
+}
+
+.carousel_button__prev {
+   left: 1rem;
+}
+
+.carousel_button__next {
+   right: 1rem;
+}
+
+.carousel_button:hover {
+   color: rgba(135, 206, 250, 0.75);
 }
