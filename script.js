@@ -34,9 +34,7 @@ function slide(toIndex) {
       if (toIndex >= itemsArray.length) {
          toIndex = 0;
       }
-
       newItemActive = itemsArray[toIndex];
-
       newItemActive.classList.add("carousel_item__pos_next");
       setTimeout(() => {
          newItemActive.classList.add("carousel_item__next");
@@ -46,9 +44,7 @@ function slide(toIndex) {
       if (toIndex < 0) {
          toIndex = itemsArray.length - 1;
       }
-
       newItemActive = itemsArray[toIndex];
-
       newItemActive.classList.add("carousel_item__pos_prev");
       setTimeout(() => {
          newItemActive.classList.add("carousel_item__prev");
