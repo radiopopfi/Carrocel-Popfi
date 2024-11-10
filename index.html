@@ -10,47 +10,49 @@
             overflow: hidden;
             position: relative;
         }
-        .carousel iframe {
-            width: 100%;
+
+        .carousel-images {
+            display: flex;
+            width: 500%; /* Ajuste conforme o número de imagens */
+            animation: slide 20s infinite;
+        }
+
+        .carousel-images img {
+            width: 20%; /* Cada imagem ocupa 1/5 do espaço total */
             height: 100%;
-            position: absolute;
-            top: 0;
-            left: 100%;
-            animation: slide 12s infinite;
-        }
-        .carousel iframe:nth-child(1) {
-            left: 0;
-            animation-delay: 0s;
-        }
-        .carousel iframe:nth-child(2) {
-            animation-delay: 4s;
-        }
-        .carousel iframe:nth-child(3) {
-            animation-delay: 8s;
-        }
-        .carousel iframe:nth-child(4) {
-            animation-delay: 12s;
-        }
-        .carousel iframe:nth-child(5) {
-            animation-delay: 16s;
+            object-fit: cover; /* Garante que as imagens se ajustem ao tamanho do carrossel */
         }
 
         @keyframes slide {
-            0% { left: 100%; }
-            33% { left: 0; }
-            66% { left: -100%; }
-            100% { left: 100%; }
+            0% { transform: translateX(0); }
+            20% { transform: translateX(-100%); }
+            40% { transform: translateX(-200%); }
+            60% { transform: translateX(-300%); }
+            80% { transform: translateX(-400%); }
+            100% { transform: translateX(0); }
         }
     </style>
-    <title>Iframe Carousel</title>
+    <title>Carousel de Imagens</title>
 </head>
 <body>
     <div class="carousel">
-        <iframe src="img/image1.png" title="Ad 1" frameborder="0"></iframe>
-        <iframe src="img/image2.png" title="Ad 2" frameborder="0"></iframe>
-        <iframe src="img/image3.png" title="Ad 3" frameborder="0"></iframe>
-        <iframe src="img/image4.png" title="Ad 4" frameborder="0"></iframe>
-        <iframe src="img/image5.png" title="Ad 5" frameborder="0"></iframe>
+        <div class="carousel-images">
+            <a href="https://example.com/1" target="_blank">
+                <img src="img/image1.png" alt="Imagem 1">
+            </a>
+            <a href="https://example.com/2" target="_blank">
+                <img src="img/image2.png" alt="Imagem 2">
+            </a>
+            <a href="https://example.com/3" target="_blank">
+                <img src="img/image3.png" alt="Imagem 3">
+            </a>
+            <a href="https://example.com/4" target="_blank">
+                <img src="img/image4.png" alt="Imagem 4">
+            </a>
+            <a href="https://example.com/5" target="_blank">
+                <img src="img/image5.png" alt="Imagem 5">
+            </a>
+        </div>
     </div>
 </body>
 </html>
