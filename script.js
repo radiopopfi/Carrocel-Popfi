@@ -7,7 +7,7 @@
 let onSlide = false;
 
 window.addEventListener("load", () => {
-   // autoSlide();
+   autoSlide();
 
    const dots = document.querySelectorAll(".carousel_dot");
    for (let i = 0; i < dots.length; i++) {
