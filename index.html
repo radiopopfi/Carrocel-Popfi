@@ -1,28 +1,56 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrossel de Imagens</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        .carousel {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel iframe {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            animation: slide 12s infinite;
+        }
+        .carousel iframe:nth-child(1) {
+            left: 0;
+            animation-delay: 0s;
+        }
+        .carousel iframe:nth-child(2) {
+            animation-delay: 4s;
+        }
+        .carousel iframe:nth-child(3) {
+            animation-delay: 8s;
+        }
+        .carousel iframe:nth-child(4) {
+            animation-delay: 12s;
+        }
+        .carousel iframe:nth-child(5) {
+            animation-delay: 16s;
+        }
+
+        @keyframes slide {
+            0% { left: 100%; }
+            33% { left: 0; }
+            66% { left: -100%; }
+            100% { left: 100%; }
+        }
+    </style>
+    <title>Iframe Carousel</title>
 </head>
 <body>
-
-<div class="carousel">
-    <div class="carousel-item active"><img src="img/image1.png" alt="Imagem 1"></div>
-    <div class="carousel-item"><img src="img/image2.png" alt="Imagem 2"></div>
-    <div class="carousel-item"><img src="img/image3.png" alt="Imagem 3"></div>
-    <div class="carousel-item"><img src="img/image4.png" alt="Imagem 4"></div>
-    <div class="carousel-item"><img src="img/image5.png" alt="Imagem 5"></div>
-</div>
-
-<div class="carousel-indicators">
-    <input type="radio" name="carousel" id="slide1" checked>
-    <input type="radio" name="carousel" id="slide2">
-    <input type="radio" name="carousel" id="slide3">
-    <input type="radio" name="carousel" id="slide4">
-    <input type="radio" name="carousel" id="slide5">
-</div>
-
+    <div class="carousel">
+        <iframe src="img/image1.png" title="Ad 1" frameborder="0"></iframe>
+        <iframe src="img/image2.png" title="Ad 2" frameborder="0"></iframe>
+        <iframe src="img/image3.png" title="Ad 3" frameborder="0"></iframe>
+        <iframe src="img/image4.png" title="Ad 4" frameborder="0"></iframe>
+        <iframe src="img/image5.png" title="Ad 5" frameborder="0"></iframe>
+    </div>
 </body>
 </html>
