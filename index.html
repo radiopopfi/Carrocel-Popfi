@@ -1,52 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Image Slider (Carousel) Part 2 | Coding's Time</title>
-
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+   <title>Carrossel Popfi</title>
    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
    <div class="carousel">
+      <input type="radio" id="slide1" name="carousel" checked>
+      <input type="radio" id="slide2" name="carousel">
+      <input type="radio" id="slide3" name="carousel">
+      <input type="radio" id="slide4" name="carousel">
+      <input type="radio" id="slide5" name="carousel">
+
       <div class="carousel_inner">
-         <!-- Primeira imagem com link -->
-         <div class="carousel_item carousel_item__active">
+         <div class="carousel_item">
             <a href="https://www.popfi.com.br" target="_blank">
                <img src="./img/image1.png" alt="" class="carousel_img">
             </a>
-            <div class="carousel_caption">
-               <!-- Remover ou deixar em branco o conteúdo -->
-            </div>
          </div>
-
-         <!-- Segunda imagem com link -->
          <div class="carousel_item">
             <a href="https://www.popfi.com.br" target="_blank">
                <img src="./img/image2.png" alt="" class="carousel_img">
             </a>
          </div>
-
-         <!-- Terceira imagem com link -->
          <div class="carousel_item">
             <a href="https://www.popfi.com.br" target="_blank">
                <img src="./img/image3.png" alt="" class="carousel_img">
             </a>
          </div>
-
-         <!-- Quarta imagem com link -->
          <div class="carousel_item">
             <a href="https://www.popfi.com.br" target="_blank">
                <img src="./img/image4.png" alt="" class="carousel_img">
             </a>
          </div>
-
-         <!-- Quinta imagem com link -->
          <div class="carousel_item">
             <a href="https://www.popfi.com.br" target="_blank">
                <img src="./img/image5.png" alt="" class="carousel_img">
@@ -54,27 +46,26 @@
          </div>
       </div>
 
-      <!-- Indicadores corrigidos -->
+      <!-- Indicadores -->
       <div class="carousel_indicator">
-         <button class="carousel_dot carousel_dot__active"></button>
-         <button class="carousel_dot"></button>
-         <button class="carousel_dot"></button>
-         <button class="carousel_dot"></button> <!-- Novo indicador para 4ª imagem -->
-         <button class="carousel_dot"></button> <!-- Novo indicador para 5ª imagem -->
+         <label for="slide1" class="carousel_dot"></label>
+         <label for="slide2" class="carousel_dot"></label>
+         <label for="slide3" class="carousel_dot"></label>
+         <label for="slide4" class="carousel_dot"></label>
+         <label for="slide5" class="carousel_dot"></label>
       </div>
 
       <!-- Controles do carrossel -->
       <div class="carousel_control">
-         <button class="carousel_button carousel_button__prev">
+         <label for="slide1" class="carousel_button carousel_button__prev">
             <i class="fas fa-chevron-left"></i>
-         </button>
-         <button class="carousel_button carousel_button__next">
+         </label>
+         <label for="slide5" class="carousel_button carousel_button__next">
             <i class="fas fa-chevron-right"></i>
-         </button>
+         </label>
       </div>
    </div>
 
-   <script src="./script.js"></script>
 </body>
 
 </html>
